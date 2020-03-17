@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+
+import './app.css';
+
+import { Grommet } from 'grommet';
+import styled from 'styled-components'
+
+import TableOfContents from './Containers/TableOfContents'
+import Page from './Containers/Page'
+
+const Body = styled.section`
+  width: 100vw;
+  height: 100vh;
+  background-color: #888;
+`
+
+const theme = {
+  global: {
+
+  }
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Body>
+        <Grommet theme={theme}>
+          <TableOfContents />
+
+          <Page>
+            {/* <PageMenu>
+              
+            </PageMenu>
+            
+            <WritingArea>
+              
+            </WritingArea> */}
+          </Page>
+        </Grommet>
+      </Body>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
