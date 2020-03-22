@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
+import { Box } from 'grommet'
 
 import TableOfContentsMenu from '../Components/TableOfContentsMenu'
 import TableOfContentsList from '../Components/TableOfContentsList'
@@ -8,21 +9,22 @@ const This = styled.div`
   display: flex;
   flex-direction: column;
 
-  height: 100%;
   width: 400px;
-  background-color: #CCD;
+
+  border-right: 1px solid #0df;
 `
 
 const TableOfContents = props => {
+  const [isExpanded, setExpanded] = useState(true);
   return (
     <This className = "TableOfContents">
-      <TableOfContentsMenu>
-              
-      </TableOfContentsMenu>
+        <TableOfContentsMenu>
+          Table Of Contents Menu
+        </TableOfContentsMenu>
 
-      <TableOfContentsList>
-        
-      </TableOfContentsList>
+        <TableOfContentsList>
+          Table Of Contents List
+        </TableOfContentsList>
     </This>
   )
 };

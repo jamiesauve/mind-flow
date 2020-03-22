@@ -7,15 +7,27 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.1",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
     "concurrently": "^5.1.0",
     "electron-is-dev": "^1.1.0",
     "grommet": "^2.11.2",
+    "lodash": "^4.17.15",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
     "sass": "^1.26.3",
     "styled-components": "^5.0.1",
     "wait-on": "^4.0.1"
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.13",
+    "@rescripts/rescript-env": "^0.0.11",
+    "electron": "^8.1.1",
+    "electron-builder": "^22.4.1",
+    "electron-devtools-installer": "^2.2.4"
   },
   "homepage": "./",
   "scripts": {
@@ -46,14 +58,6 @@
   "rescripts": [
     "env"
   ],
-  "devDependencies": {
-    "@rescripts/cli": "^0.0.13",
-    "@rescripts/rescript-env": "^0.0.11",
-    "electron": "^8.1.1",
-    "electron-builder": "^22.4.1",
-    "electron-devtools-installer": "^2.2.4",
-    "typescript": "^3.8.3"
-  },
   "author": {
     "name": "Jamie Sauve",
     "email": "jamiesauve@zohomail.com",
@@ -61,7 +65,7 @@
   },
   "build": {
     "appId": "com.my-website.my-app",
-    "productName": "Mindflow",
+    "productName": "MindFlow",
     "copyright": "Copyright © 2019 ${author}",
     "mac": {
       "category": "public.app-category.utilities"
