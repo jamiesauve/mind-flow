@@ -24,3 +24,6 @@ yarn-error.log*
 
 # electron build
 /dist
+
+# data
+/notes
