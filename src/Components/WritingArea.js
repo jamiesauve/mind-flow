@@ -18,13 +18,28 @@ font-size: 20px;
 `
 
 const WritingArea = props => {
-  const [currentText, setCurrentText] = useState('');
+  const [currentText, setCurrentText] = useState('')
+  const [currentTitle, setCurrentTitle] = useState('hello')
   
+  const save = () => {
+    const fileOperation = 'create'
+    const fileName = 'attempt.txt'
+    const noteTitle = currentTitle
+    const noteBody = currentText
+  
+    props.saveNote(
+      fileOperation,
+      fileName,
+      noteTitle,
+      noteBody,
+    )
+  }
+
   return (
     <This>
       <Textarea
         autoFocus
-        onBlur={props.saveText}
+        onBlur={save}
         onChange={e => setCurrentText(e.target.value)}
         value={currentText}
       />
