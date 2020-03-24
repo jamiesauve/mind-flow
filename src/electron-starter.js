@@ -13,10 +13,10 @@ let mainWindow;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    mainWindow = new BrowserWindow({width: 1200, height: 900});
 
     // and load the index.html of the app.
-    mainWindow.loadURL('http://localhost:3000');
+    mainWindow.loadURL('http://localhost:4200');
 
     // Open the DevTools.
     mainWindow.webContents.openDevTools();

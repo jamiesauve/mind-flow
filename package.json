@@ -34,11 +34,13 @@
   "homepage": "./",
   "main": "src/electron-starter.js",
   "scripts": {
-    "start": "rescripts start",
+    "start": "PORT=4200 rescripts start",
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
+    "server": "node fileServer/server.js",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "dev": "concurrently \"BROWSER=none yarn start\" \"npm run server\" \"wait-on http://localhost:4200 && electron .\"",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn build",
     "electron-pack": "electron-builder build -mw"
