@@ -19,7 +19,7 @@ font-size: 20px;
 
 const WritingArea = props => {
   const [currentText, setCurrentText] = useState('')
-  const [currentTitle, setCurrentTitle] = useState('hello')
+  const [currentTitle, setCurrentTitle] = useState('Title here :)')
   
   const save = () => {
     const fileOperation = 'create'

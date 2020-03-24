@@ -13,20 +13,20 @@ const This = styled.div`
   flex-grow: 1;
 `
 
-const saveNote = async (fileOperation, fileName, noteTitle, noteBody) => {
-  const res = await fetch(
-    `http://127.0.0.1:4201/${fileOperation}`,
-    {
-    method: 'POST',
-    body: JSON.stringify({
-      fileName,
-      noteTitle,
-      noteBody,
-    }),
-    headers: {
-      'content-type': 'application/json',
-    }
-  });
+const saveNote = (fileOperation, fileName, noteTitle, noteBody) => {
+  axios.post(`http://127.0.0.1:4201/${fileOperation}`, {
+      data: {
+        fileName,
+        noteTitle,
+        noteBody,
+      },
+      headers: {
+        'content-type': 'application/json',
+      }
+    }).then((res) => {
+      console.log('result from /create:', res);
+    }).catch((err) => console.log('error:', err))
+
 }
 
 const Page = props => {

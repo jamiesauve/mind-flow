@@ -13,17 +13,30 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.json())
 
+app.get('/allNotes', (req, res) => {
+  // only returns one note for now!
+  fs.readFile('./notes/attempt.txt', {encoding: 'utf-8'}, (err, data) => {
+    const [title, body] = data.split('$$$')
+
+    res.header({'Content-Type': 'application/json'})
+    res.status(200)
+    res.json([{title, body}])
+  });
+})
+
 app.post('/create', (req, res) => {
   
   const {
-    body
+    body : {
+      data
+    }
   } = req
 
-  fs.writeFile(`./notes/${body.fileName}`, `${body.noteTitle}$$$${body.noteBody}`, function (err) { // use UUIDs for file names
+  fs.writeFile(`./notes/${data.fileName}`, `${data.noteTitle}$$$${data.noteBody}`, function (err) { // use UUIDs for file names
     if (err) {
-      res.status(500).send()
+      res.status(500).send("fail")
     } else {
-      res.status(200).send()
+      res.status(200).send("success")
     }
   })
 })
