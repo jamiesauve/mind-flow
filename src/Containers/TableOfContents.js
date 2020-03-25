@@ -59,7 +59,9 @@ const TableOfContents = props => {
           {
             _.map(allNotes, note => {
               return (
-                <ListNote>
+                <ListNote
+                  key={note.title}
+                >
                   {note.title}
                 </ListNote>
               )
